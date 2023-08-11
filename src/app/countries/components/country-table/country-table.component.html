@@ -3,7 +3,7 @@
 </div>
 
 <ng-template #table>
-    <table class="table table-cover"></table>
+    <table class="table table-hover">
     <thead>
         <tr>
             <th>#</th>
@@ -25,6 +25,8 @@
             <td>{{country.name.common}}</td>
             <td>{{country.capital}}</td>
             <td>{{country.population | number}}</td>
+            <td><a href="#">ver más</a></td>
         </tr>
     </tbody>
+</table>
 </ng-template>

@@ -10,6 +10,16 @@ private apiUrl: string= 'https://restcountries.com/v3.1'
 
     constructor(private http: HttpClient) { }
     
+    searchCountryAlphaCode(q:string):Observable<Country[]>{
+        return this.http.get<Country[]>(`${this.apiUrl}/alpha/${q}`)
+        .pipe(
+            catchError(error=>{
+                console.log(error);
+                return of([])
+            })
+        );
+    }
+
     searchCapital( q : string): Observable<Country[]>{
        return this.http.get<Country[]>(`${this.apiUrl}/capital/${q}`)
         .pipe(
@@ -18,6 +28,25 @@ private apiUrl: string= 'https://restcountries.com/v3.1'
                 return of([])
             })
         );
-        //.subscribe();
+    }
+
+    searchCountry( q : string): Observable<Country[]>{
+        return this.http.get<Country[]>(`${this.apiUrl}/name/${q}`)
+         .pipe(
+             catchError(error=>{
+                 console.log(error);
+                 return of([])
+             })
+         );
+    }
+
+    searchRegion( q : string): Observable<Country[]>{
+        return this.http.get<Country[]>(`${this.apiUrl}/region/${q}`)
+         .pipe(
+             catchError(error=>{
+                 console.log(error);
+                 return of([])
+             })
+         );
     }
 }

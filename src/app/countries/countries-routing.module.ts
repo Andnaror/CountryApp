@@ -15,11 +15,11 @@ const routes: Routes =[
     },
     {
     path:'by-country',
-    component: ByRegionPageComponent
+    component: ByCountryPageComponent
     },
     {
     path:'by-region',
-    component: ByCountryPageComponent
+    component: ByRegionPageComponent
     },
     {
     path:'country/:id',
